@@ -1,0 +1,26 @@
+/*Tela de inicio  para acessar  plugin de bateria*/
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>abre</title>
+   
+   
+
+  </head>
+  <link href="css/style.css" rel="stylesheet" >
+  <body >
+ <img src="f2.jpg" class="w3-circle" alt="Alps">
+<table class ="button">
+<tr>
+  
+  <th> <a href=""><button >My Mapa</button></a></th>
+
+</tr>
+<tr>
+  <td><a href="/bateria/soma.html"><button >my % Bateria</button></a></td>
+  
+</tr>
+</table>
+ 
+  </body>
+</html>
