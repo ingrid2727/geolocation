@@ -1,0 +1,37 @@
+document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady() {
+    // Cordova is now initialized. Have fun!
+
+    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+    document.getElementById('deviceready').classList.add('ready');
+}
+
+document.addEventListener("deviceready",function(){
+   window.addEventListener("batterystatus", onBatteryStatus, true);
+   window.addEventListener("batterystatus", onBatteryLow, true);
+   window.addEventListener("batterystatus", onBatteryCritical, true);
+},false);
+
+function onBatteryStatus(status) 
+{
+    if(status.level>=16){
+        alert("Nível da bateria: " + status.level + "%\n Plugado: " + status.isPlugged);
+        console.log("Nível da bateria: " + status.level + "%\n Plugado: " + status.isPlugged);
+    }
+}
+
+function onBatteryLow(status) {
+    if(status.level<=15){
+        alert("Bateria abaixo dos " + status.level + "%");  
+        console.log("Bateria abaixo dos " + status.level + "%");  
+    }
+    
+}
+
+function onBatteryCritical(status) {
+    if(status.level<=5){
+        alert("Nível da bateria crítica, está " + status.level + "%\nColoque no carregador!");
+        console.log("Nível da bateria crítica, está " + status.level + "%\nColoque no carregador!");
+    }
+}
