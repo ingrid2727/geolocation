@@ -1,0 +1,23 @@
+app.initialize();
+
+
+function onSuccessLocation(position){
+  alert('Latitude:'+ position.coords.latitude +'\n'+ 'Longitude:'+ position.coords.longitude + '\n'+ 'Timestamp:'+position.timestamp);
+}
+
+function onErrorLocation (error){
+alert('Código de erro: '+ error.code + 'Mensagem: ' + error.message);
+}
+function localizar();{
+navigator.geolocation.getCurrentPosition(onSuccessLocation, onErrorLocation);
+
+
+}
+function localicarfrequentemente(){
+var watchID = navigator.geolocation.watchPosition(onSuccessLocation,onErrorLocation, {maximumAge: 2000,timeout:30000 ,enableHighAccuracy: true
+});
+}
+
+function localizarpausa(){
+  navigator.geolocation.clearWatch(watchID);
+}
