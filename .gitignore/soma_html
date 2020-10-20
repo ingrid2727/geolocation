@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PAM</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="boxResult">
+		<p id="res">00</p>
+	</div>
+
+	<div class="form">
+		<input id="vl1" class ="vl1" type="number" placeholder="Valor 1">
+		<input id="vl2" class ="vl2" type="number" placeholder="Valor 2">
+		<button onclick="somar()">OK</button>
+		<a href="index.html"><input type="button" value="Voltar ao Index"></a>
+	</div>
+
+	<script type="text/javascript">
+        function somar(){
+            var x = document.getElementById("vl1").value;
+            var y = document.getElementById("vl2").value;
+            document.getElementById("res").innerHTML = parseInt(x) + parseInt(y);
+        }
+    </script>
+</body>
+</html>
